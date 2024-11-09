@@ -1,0 +1,7 @@
+CARLA_DIR	---------------->	/home/mahmoud/EcoRacingTeam/software/CARLA
+
+BRIDGE_DIR	---------------->	/home/mahmoud/EcoRacingTeam/software/carla-ros-bridge	
+
+OBJECTS_FILE	---------------->	/home/mahmoud/EcoRacingTeam/int_ws/src/dev/objects.json	
+
+CODE_DIR	---------------->	/home/mahmoud/EcoRacingTeam/int_ws
