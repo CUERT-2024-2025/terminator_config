@@ -12,3 +12,6 @@ sudo apt-get update
 sudo apt-get install terminator
 ```
 
+## Final Look
+
+![image](https://github.com/user-attachments/assets/528565a2-f824-4491-85ec-f2db01b13d39)
