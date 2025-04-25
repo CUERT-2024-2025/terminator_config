@@ -1,7 +1,3 @@
-Here's a sample `README.md` you can use for your project:
-
----
-
 # 🏁 CARLA Terminator Layout Setup
 
 This bash script automates the creation of a Terminator layout configured for your CARLA + ROS development workflow.
