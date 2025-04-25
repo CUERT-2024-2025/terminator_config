@@ -40,7 +40,7 @@ cd terminator_config
 ### 2. Run the script
 
 ```bash
-./setup_terminator_layout.sh
+setup_terminator_config.bash
 ```
 
 ### 3. Enter the required paths when prompted
