@@ -8,7 +8,6 @@ This bash script automates the creation of a Terminator layout configured for yo
 
 - Prompts for custom paths:
   - `CARLA_DIR`
-  - `BRIDGE_DIR`
   - `CODE_DIR`
 - Checks if **Terminator** is installed (and installs it if not).
 - Automatically configures a Terminator layout with multiple terminals for:
@@ -44,9 +43,11 @@ cd terminator_config
 Example:
 
 ```
-Enter CARLA_DIR path: /home/mahmoud/EcoRacingTeam/software/CARLA
-Enter BRIDGE_DIR path: /home/mahmoud/EcoRacingTeam/software/carla-ros-bridge
-Enter CODE_DIR path: /home/mahmoud/EcoRacingTeam/int_ws
+Is ROS installed locally? yes->Locally, No->Docker (yes/no) yes
+Is CARLA installed locally? yes->Locally, No->Docker (yes/no) yes
+Enter CARLA directory path: /home/mahmoud/CARLA_0.9.15
+Enter path to int_ws workspace: /home/mahmoud/ws_edited
+
 ```
 
 *Trailing slashes will be automatically cleaned.*
