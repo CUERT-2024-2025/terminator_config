@@ -32,7 +32,8 @@ create_command() {
         # Fixed quoting for Docker commands
         echo "bash -c 'docker start ros_environment && docker exec -ti ros_environment /bin/bash -c \"\
             cd $INT_WS_DIR && \
-            source devel/setup.bash && \
+            echo -e \\\"\\\\n$alias_name = $alias_command\\\\n\\\"; \
+            echo -e source devel/setup.bash >> ~/.bashrc && \
             echo -e \\\"\\\\nalias $alias_name=\\\\\\\"$alias_command\\\\\\\"\\\\n\\\" >> ~/.bashrc && \
             exec /bin/bash -i\"'"
     fi
