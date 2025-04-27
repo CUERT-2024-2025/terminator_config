@@ -29,7 +29,12 @@ create_command() {
     if [ "$ros_local" = "yes" ]; then
         echo "bash --init-file <(echo \". \\\"\$HOME/.bashrc\\\"; export PYTHONPATH=\$PYTHONPATH:$CARLA_DIR/PythonAPI/carla/dist/carla-0.9.15-py3.7-linux-x86_64.egg; cd $INT_WS_DIR; source devel/setup.bash; alias $alias_name='$alias_command'; echo '$alias_name = $alias_command'\\n\")"
     else
-        echo "bash -c 'docker start ros_environment && docker exec -ti ros_environment /bin/bash -c \"cd $INT_WS_DIR; source devel/setup.bash; alias $alias_name='$alias_command'; echo '✅ Alias created: $alias_name = $alias_command'\\n\" || (echo \"[ERROR] Docker issue, press ENTER\"; read)'"
+        # Fixed quoting for Docker commands
+        echo "bash -c 'docker start ros_environment && docker exec -ti ros_environment /bin/bash -c \"\
+            cd $INT_WS_DIR && \
+            source devel/setup.bash && \
+            echo -e \\\"\\\\nalias $alias_name=\\\\\\\"$alias_command\\\\\\\"\\\\n\\\" >> ~/.bashrc && \
+            exec /bin/bash -i\"'"
     fi
 }
 
