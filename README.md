@@ -8,8 +8,7 @@ This bash script automates the creation of a Terminator layout configured for yo
 
 - Prompts for custom paths:
   - `CARLA_DIR`
-  - `BRIDGE_DIR`
-  - `CODE_DIR`
+  - `INT_WS_DIR`
 - Checks if **Terminator** is installed (and installs it if not).
 - Automatically configures a Terminator layout with multiple terminals for:
   - Launching CARLA
@@ -20,7 +19,8 @@ This bash script automates the creation of a Terminator layout configured for yo
   - Autonomous control node
   - RViz
   - Performance evaluation
-- Saves the layout config under `~/.config/terminator/config`
+- Dynamically sets the `PYTHONPATH` for CARLA based on the version (`9.11` or `9.15`).
+- Saves the layout config under `~/.config/terminator/config`.
 
 ---
 
@@ -44,9 +44,11 @@ cd terminator_config
 Example:
 
 ```
-Enter CARLA_DIR path: /home/mahmoud/EcoRacingTeam/software/CARLA
-Enter BRIDGE_DIR path: /home/mahmoud/EcoRacingTeam/software/carla-ros-bridge
-Enter CODE_DIR path: /home/mahmoud/EcoRacingTeam/int_ws
+Enter CARLA version (9.15 or 9.11): 9.15
+Is CARLA installed locally? yes->Locally, No->Docker (yes/no): yes
+Enter CARLA directory path: /home/mahmoud/EcoRacingTeam/software/CARLA
+Is ROS installed locally? yes->Locally, No->Docker (yes/no): yes
+Enter path to int_ws workspace: /home/mahmoud/EcoRacingTeam/int_ws
 ```
 
 *Trailing slashes will be automatically cleaned.*
